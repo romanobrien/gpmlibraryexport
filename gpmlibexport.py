@@ -41,7 +41,7 @@ def Encodecheck(titleOutput):
     compiled.write(titleOutput + "\n")
 
 for filename in os.listdir("Takeout/Google Play Music/Tracks"):
-    # Finds each file in Tracks folder, 
+    # Finds each file in Tracks folder, then isolates the track name and artist name
     tracktitle = open("Takeout/Google Play Music/Tracks/"+filename, 'r')
     titleInput = tracktitle.read()
     stringmarks = []
