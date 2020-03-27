@@ -1,6 +1,6 @@
 import os
 
-gpm_export = open('gpm_export.txt','w')
+gpm_export = open('gpm_export.txt','x')
 
 # csv apostrophe encoding = &#39;
 # csv ampersand encoding = &amp;
