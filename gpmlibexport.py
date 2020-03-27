@@ -1,6 +1,6 @@
 import os
 
-compiled = open('compiled.csv','w')
+gpm_export = open('gpm_export.txt','w')
 
 # csv apostrophe encoding = &#39;
 # csv ampersand encoding = &amp;
@@ -8,7 +8,6 @@ compiled = open('compiled.csv','w')
 
 def Encodecheck(titleOutput):
     # This function checks for any encoding of special characters in the song title, and replaces them with the correct character
-    print(titleOutput)
     while "&#39;" in titleOutput or "&quot;" in titleOutput or "&amp;" in titleOutput:
         if "&#39;" in titleOutput:
             # Checks for encoding of apostrophes in song title and replaces with an actual apostrophe
@@ -37,8 +36,7 @@ def Encodecheck(titleOutput):
                     charnum -=4
                 charnum +=1
 
-    print(titleOutput)
-    compiled.write(titleOutput + "\n")
+    gpm_export.write(titleOutput + "\n")
 
 for filename in os.listdir("Takeout/Google Play Music/Tracks"):
     # Finds each file in Tracks folder, then isolates the track name and artist name
@@ -65,4 +63,4 @@ for filename in os.listdir("Takeout/Google Play Music/Tracks"):
     Encodecheck(titleOutput)
     index = 0
 
-compiled.close()
+gpm_export.close()
